@@ -1,0 +1,2246 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/jgable/gulp-cache#readme">gulp-cache (v0.4.6)</a>
+</h1>
+<h4>A cache proxy plugin for Gulp</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-cache">module gulp-cache</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.gulp-cache">
+            function <span class="apidocSignatureSpan"></span>gulp-cache
+            <span class="apidocSignatureSpan">(task, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.Cache">
+            function <span class="apidocSignatureSpan">gulp-cache.</span>Cache
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.Cache.prototype.addCached">
+            function <span class="apidocSignatureSpan">gulp-cache.</span>Cache.prototype.addCached
+            <span class="apidocSignatureSpan">(category, hash, contents, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.Cache.prototype.clear">
+            function <span class="apidocSignatureSpan">gulp-cache.</span>Cache.prototype.clear
+            <span class="apidocSignatureSpan">(category, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.Cache.prototype.getCached">
+            function <span class="apidocSignatureSpan">gulp-cache.</span>Cache.prototype.getCached
+            <span class="apidocSignatureSpan">(category, hash, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.Cache.prototype.getCachedFilePath">
+            function <span class="apidocSignatureSpan">gulp-cache.</span>Cache.prototype.getCachedFilePath
+            <span class="apidocSignatureSpan">(category, hash)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.Cache.prototype.hasCached">
+            function <span class="apidocSignatureSpan">gulp-cache.</span>Cache.prototype.hasCached
+            <span class="apidocSignatureSpan">(category, hash, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.Cache.prototype.removeCached">
+            function <span class="apidocSignatureSpan">gulp-cache.</span>Cache.prototype.removeCached
+            <span class="apidocSignatureSpan">(category, hash, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.TaskProxy">
+            function <span class="apidocSignatureSpan">gulp-cache.</span>TaskProxy
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.clear">
+            function <span class="apidocSignatureSpan">gulp-cache.</span>clear
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.clearAll">
+            function <span class="apidocSignatureSpan">gulp-cache.</span>clearAll
+            <span class="apidocSignatureSpan">(done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.defaultOptions.key">
+            function <span class="apidocSignatureSpan">gulp-cache.</span>defaultOptions.key
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.defaultOptions.restore">
+            function <span class="apidocSignatureSpan">gulp-cache.</span>defaultOptions.restore
+            <span class="apidocSignatureSpan">(restored)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.defaultOptions.value">
+            function <span class="apidocSignatureSpan">gulp-cache.</span>defaultOptions.value
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.toString">
+            function <span class="apidocSignatureSpan">gulp-cache.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gulp-cache.</span>Cache.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gulp-cache.</span>TaskProxy.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gulp-cache.</span>defaultOptions</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gulp-cache.</span>fileCache</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-cache.Cache">module gulp-cache.Cache</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.Cache.Cache">
+            function <span class="apidocSignatureSpan">gulp-cache.</span>Cache
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-cache.Cache.prototype">module gulp-cache.Cache.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.Cache.prototype.addCached">
+            function <span class="apidocSignatureSpan">gulp-cache.Cache.prototype.</span>addCached
+            <span class="apidocSignatureSpan">(category, hash, contents, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.Cache.prototype.clear">
+            function <span class="apidocSignatureSpan">gulp-cache.Cache.prototype.</span>clear
+            <span class="apidocSignatureSpan">(category, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.Cache.prototype.getCached">
+            function <span class="apidocSignatureSpan">gulp-cache.Cache.prototype.</span>getCached
+            <span class="apidocSignatureSpan">(category, hash, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.Cache.prototype.getCachedFilePath">
+            function <span class="apidocSignatureSpan">gulp-cache.Cache.prototype.</span>getCachedFilePath
+            <span class="apidocSignatureSpan">(category, hash)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.Cache.prototype.hasCached">
+            function <span class="apidocSignatureSpan">gulp-cache.Cache.prototype.</span>hasCached
+            <span class="apidocSignatureSpan">(category, hash, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.Cache.prototype.removeCached">
+            function <span class="apidocSignatureSpan">gulp-cache.Cache.prototype.</span>removeCached
+            <span class="apidocSignatureSpan">(category, hash, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-cache.Cache.prototype.addCached">module gulp-cache.Cache.prototype.addCached</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.Cache.prototype.addCached.addCached">
+            function <span class="apidocSignatureSpan">gulp-cache.Cache.prototype.</span>addCached
+            <span class="apidocSignatureSpan">(category, hash, contents, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-cache.Cache.prototype.clear">module gulp-cache.Cache.prototype.clear</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.Cache.prototype.clear.clear">
+            function <span class="apidocSignatureSpan">gulp-cache.Cache.prototype.</span>clear
+            <span class="apidocSignatureSpan">(category, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-cache.Cache.prototype.getCached">module gulp-cache.Cache.prototype.getCached</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.Cache.prototype.getCached.getCached">
+            function <span class="apidocSignatureSpan">gulp-cache.Cache.prototype.</span>getCached
+            <span class="apidocSignatureSpan">(category, hash, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-cache.Cache.prototype.getCachedFilePath">module gulp-cache.Cache.prototype.getCachedFilePath</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.Cache.prototype.getCachedFilePath.getCachedFilePath">
+            function <span class="apidocSignatureSpan">gulp-cache.Cache.prototype.</span>getCachedFilePath
+            <span class="apidocSignatureSpan">(category, hash)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-cache.Cache.prototype.hasCached">module gulp-cache.Cache.prototype.hasCached</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.Cache.prototype.hasCached.hasCached">
+            function <span class="apidocSignatureSpan">gulp-cache.Cache.prototype.</span>hasCached
+            <span class="apidocSignatureSpan">(category, hash, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-cache.Cache.prototype.removeCached">module gulp-cache.Cache.prototype.removeCached</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.Cache.prototype.removeCached.removeCached">
+            function <span class="apidocSignatureSpan">gulp-cache.Cache.prototype.</span>removeCached
+            <span class="apidocSignatureSpan">(category, hash, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-cache.TaskProxy">module gulp-cache.TaskProxy</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.TaskProxy.TaskProxy">
+            function <span class="apidocSignatureSpan">gulp-cache.</span>TaskProxy
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-cache.TaskProxy.prototype">module gulp-cache.TaskProxy.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.TaskProxy.prototype._checkForCachedValue">
+            function <span class="apidocSignatureSpan">gulp-cache.TaskProxy.prototype.</span>_checkForCachedValue
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.TaskProxy.prototype._getFileKey">
+            function <span class="apidocSignatureSpan">gulp-cache.TaskProxy.prototype.</span>_getFileKey
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.TaskProxy.prototype._getValueFromResult">
+            function <span class="apidocSignatureSpan">gulp-cache.TaskProxy.prototype.</span>_getValueFromResult
+            <span class="apidocSignatureSpan">(result)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.TaskProxy.prototype._runProxiedTask">
+            function <span class="apidocSignatureSpan">gulp-cache.TaskProxy.prototype.</span>_runProxiedTask
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.TaskProxy.prototype._runProxiedTaskAndCache">
+            function <span class="apidocSignatureSpan">gulp-cache.TaskProxy.prototype.</span>_runProxiedTaskAndCache
+            <span class="apidocSignatureSpan">(cachedKey)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.TaskProxy.prototype._storeCachedResult">
+            function <span class="apidocSignatureSpan">gulp-cache.TaskProxy.prototype.</span>_storeCachedResult
+            <span class="apidocSignatureSpan">(key, result)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.TaskProxy.prototype.processFile">
+            function <span class="apidocSignatureSpan">gulp-cache.TaskProxy.prototype.</span>processFile
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.TaskProxy.prototype.removeCachedResult">
+            function <span class="apidocSignatureSpan">gulp-cache.TaskProxy.prototype.</span>removeCachedResult
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-cache.clear">module gulp-cache.clear</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.clear.clear">
+            function <span class="apidocSignatureSpan">gulp-cache.</span>clear
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-cache.clearAll">module gulp-cache.clearAll</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.clearAll.clearAll">
+            function <span class="apidocSignatureSpan">gulp-cache.</span>clearAll
+            <span class="apidocSignatureSpan">(done)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-cache.defaultOptions">module gulp-cache.defaultOptions</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">gulp-cache.defaultOptions.</span>success</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.defaultOptions.key">
+            function <span class="apidocSignatureSpan">gulp-cache.defaultOptions.</span>key
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.defaultOptions.restore">
+            function <span class="apidocSignatureSpan">gulp-cache.defaultOptions.</span>restore
+            <span class="apidocSignatureSpan">(restored)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.defaultOptions.value">
+            function <span class="apidocSignatureSpan">gulp-cache.defaultOptions.</span>value
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gulp-cache.defaultOptions.</span>fileCache</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">gulp-cache.defaultOptions.</span>name</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-cache.defaultOptions.key">module gulp-cache.defaultOptions.key</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.defaultOptions.key.key">
+            function <span class="apidocSignatureSpan">gulp-cache.defaultOptions.</span>key
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-cache.defaultOptions.restore">module gulp-cache.defaultOptions.restore</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.defaultOptions.restore.restore">
+            function <span class="apidocSignatureSpan">gulp-cache.defaultOptions.</span>restore
+            <span class="apidocSignatureSpan">(restored)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-cache.defaultOptions.value">module gulp-cache.defaultOptions.value</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.defaultOptions.value.value">
+            function <span class="apidocSignatureSpan">gulp-cache.defaultOptions.</span>value
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-cache.toString">module gulp-cache.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-cache.toString.toString">
+            function <span class="apidocSignatureSpan">gulp-cache.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-cache" id="apidoc.module.gulp-cache">module gulp-cache</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.gulp-cache" id="apidoc.element.gulp-cache.gulp-cache">
+        function <span class="apidocSignatureSpan"></span>gulp-cache
+        <span class="apidocSignatureSpan">(task, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">gulp-cache = function (task, opts) {
+  // Check for required task option
+  if (!task) {
+    throw new PluginError('gulp-cache', 'Must pass a task to cache()');
+  }
+
+  // Check if this task participates in the cacheable contract
+  if (task.cacheable) {
+    // Use the cacheable options, but allow the user to override them
+    opts = objectAssign({}, task.cacheable, opts);
+  }
+
+  // Make sure we have some sane defaults
+  opts = objectAssign({}, cacheTask.defaultOptions, opts);
+
+  return new Transform({
+    objectMode: true,
+    transform: function(file, enc, cb) {
+      if (file.isNull()) {
+        cb(null, file);
+        return;
+      }
+
+      if (file.isStream()) {
+        cb(new PluginError('gulp-cache', 'Cannot operate on stream sources'));
+        return;
+      }
+
+      new TaskProxy({
+        task: task,
+        file: file,
+        opts: opts
+      })
+      .processFile().then(function(result) {
+        cb(null, result);
+      }, function(err) {
+        cb(new PluginError('gulp-cache', err));
+      });
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.Cache" id="apidoc.element.gulp-cache.Cache">
+        function <span class="apidocSignatureSpan">gulp-cache.</span>Cache
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CacheSwap(options) {
+  this.options = assign({
+    tmpDir: tmpDir,
+    cacheDirName: 'defaultCacheSwap'
+  }, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+#### `fileCache`
+
+&gt; [Optional] Where to store the cache objects
+
+- Defaults to `new Cache({ cacheDirName: 'gulp-cache' })`
+
+- Create your own with `new cache.<span class="apidocCodeKeywordSpan">Cache</span>({ cacheDirName: 'custom-cache' })`
+
+#### `name`
+
+&gt; [Optional] The name of the bucket which stores the cached objects
+
+- Defaults to `default`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.Cache.prototype.addCached" id="apidoc.element.gulp-cache.Cache.prototype.addCached">
+        function <span class="apidocSignatureSpan">gulp-cache.</span>Cache.prototype.addCached
+        <span class="apidocSignatureSpan">(category, hash, contents, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Cache.prototype.addCached = function (category, hash, contents, cb) {
+  var filePath = this.getCachedFilePath(category, hash);
+
+  mkdirp(path.dirname(filePath), {mode: parseInt('0777', 8)}, function(mkdirErr) {
+    if (mkdirErr) {
+      cb(mkdirErr);
+      return;
+    }
+
+    fs.writeFile(filePath, contents, {mode: parseInt('0777', 8)}, function(writeErr) {
+      if (writeErr) {
+        cb(writeErr);
+        return;
+      }
+
+      fs.chmod(filePath, parseInt('0777', 8), function(chmodErr) {
+        if (chmodErr) {
+          cb(chmodErr);
+          return;
+        }
+
+        cb(null, filePath);
+      });
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.Cache.prototype.clear" id="apidoc.element.gulp-cache.Cache.prototype.clear">
+        function <span class="apidocSignatureSpan">gulp-cache.</span>Cache.prototype.clear
+        <span class="apidocSignatureSpan">(category, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Cache.prototype.clear = function (category, cb) {
+  var dir = path.join(this.options.tmpDir, this.options.cacheDirName, category || '');
+  rimraf(dir, {disableGlob: true}, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.Cache.prototype.getCached" id="apidoc.element.gulp-cache.Cache.prototype.getCached">
+        function <span class="apidocSignatureSpan">gulp-cache.</span>Cache.prototype.getCached
+        <span class="apidocSignatureSpan">(category, hash, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Cache.prototype.getCached = function (category, hash, cb) {
+  var filePath = this.getCachedFilePath(category, hash);
+
+  fs.readFile(filePath, function(err, fileStream) {
+    if (err) {
+      if (err.code === 'ENOENT') {
+        cb();
+        return;
+      }
+
+      cb(err);
+      return;
+    }
+
+    cb(null, {
+      contents: fileStream.toString(),
+      path: filePath
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.Cache.prototype.getCachedFilePath" id="apidoc.element.gulp-cache.Cache.prototype.getCachedFilePath">
+        function <span class="apidocSignatureSpan">gulp-cache.</span>Cache.prototype.getCachedFilePath
+        <span class="apidocSignatureSpan">(category, hash)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Cache.prototype.getCachedFilePath = function (category, hash) {
+  return path.join(this.options.tmpDir, this.options.cacheDirName, category, hash);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.Cache.prototype.hasCached" id="apidoc.element.gulp-cache.Cache.prototype.hasCached">
+        function <span class="apidocSignatureSpan">gulp-cache.</span>Cache.prototype.hasCached
+        <span class="apidocSignatureSpan">(category, hash, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Cache.prototype.hasCached = function (category, hash, cb) {
+  var filePath = this.getCachedFilePath(category, hash);
+
+  fs.exists(filePath, function(exists) {
+    return cb(exists, exists ? filePath : null);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.Cache.prototype.removeCached" id="apidoc.element.gulp-cache.Cache.prototype.removeCached">
+        function <span class="apidocSignatureSpan">gulp-cache.</span>Cache.prototype.removeCached
+        <span class="apidocSignatureSpan">(category, hash, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Cache.prototype.removeCached = function (category, hash, cb) {
+  var filePath = this.getCachedFilePath(category, hash);
+
+  fs.unlink(filePath, function(err) {
+    if (err) {
+      if (err.code === 'ENOENT') {
+        cb();
+        return;
+      }
+
+      cb(err);
+      return;
+    }
+
+    cb();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.TaskProxy" id="apidoc.element.gulp-cache.TaskProxy">
+        function <span class="apidocSignatureSpan">gulp-cache.</span>TaskProxy
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">TaskProxy = function (opts) {
+  objectAssign(this, {
+    task: opts.task,
+    file: opts.file,
+    opts: opts.opts,
+    originalPath: opts.file.path
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.clear" id="apidoc.element.gulp-cache.clear">
+        function <span class="apidocSignatureSpan">gulp-cache.</span>clear
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clear = function (opts) {
+  opts = objectAssign({}, cacheTask.defaultOptions, opts);
+
+  return new Transform({
+    objectMode: true,
+    transform: function(file, enc, cb) {
+      if (file.isNull()) {
+        cb(null, file);
+        return;
+      }
+
+      if (file.isStream()) {
+        cb(new PluginError('gulp-cache', 'Cannot operate on stream sources'));
+        return;
+      }
+
+      var taskProxy = new TaskProxy({
+        task: null,
+        file: file,
+        opts: opts
+      });
+
+      taskProxy.removeCachedResult().then(function() {
+        cb(null, file);
+      }).catch(function(err) {
+        cb(new PluginError('gulp-cache', err));
+      });
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  cb(new PluginError('gulp-cache', err));
+});
+    }
+  });
+};
+
+cacheTask.clearAll = function(done) {
+  fileCache.<span class="apidocCodeKeywordSpan">clear</span>(null, function(err) {
+    if (err) {
+var pluginError = new PluginError(
+  'gulp-cache',
+  'Problem clearing the cache: ' + err.message
+);
+
+if (done) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.clearAll" id="apidoc.element.gulp-cache.clearAll">
+        function <span class="apidocSignatureSpan">gulp-cache.</span>clearAll
+        <span class="apidocSignatureSpan">(done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clearAll = function (done) {
+  fileCache.clear(null, function(err) {
+    if (err) {
+      var pluginError = new PluginError(
+        'gulp-cache',
+        'Problem clearing the cache: ' + err.message
+      );
+
+      if (done) {
+        done(pluginError);
+        return;
+      }
+
+      throw pluginError;
+    }
+
+    if (done) {
+      done();
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // Key off the file contents, jshint version and options
+  return [file.contents.toString('utf8'), jshintVersion, jshintOptions].join('');
+}
+```
+
+## Clearing the cache
+
+If you find yourself needing to clear the cache, there is a handy dandy `cache.<span class="apidocCodeKeywordSpan">clearAll</span>()` method:
+
+```js
+var cache = require('gulp-cache');
+
+gulp.task('clear', function (done) {
+  return cache.clearAll(done);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.defaultOptions.key" id="apidoc.element.gulp-cache.defaultOptions.key">
+        function <span class="apidocSignatureSpan">gulp-cache.</span>defaultOptions.key
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function defaultKey(file) {
+  return [VERSION, file.contents.toString('base64')].join('');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.defaultOptions.restore" id="apidoc.element.gulp-cache.defaultOptions.restore">
+        function <span class="apidocSignatureSpan">gulp-cache.</span>defaultOptions.restore
+        <span class="apidocSignatureSpan">(restored)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">defaultOptions.restore = function (restored) {
+  if (restored.contents) {
+    // Handle node 0.11 buffer to JSON as object with { type: 'buffer', data: [...] }
+    if (restored &amp;&amp; restored.contents &amp;&amp; Array.isArray(restored.contents.data)) {
+      restored.contents = new Buffer(restored.contents.data);
+    } else if (Array.isArray(restored.contents)) {
+      restored.contents = new Buffer(restored.contents);
+    } else if (typeof restored.contents === 'string') {
+      restored.contents = new Buffer(restored.contents, 'base64');
+    }
+  }
+
+  var restoredFile = new File(restored);
+  var extraTaskProperties = objectOmit(restored, Object.keys(restoredFile));
+
+  // Restore any properties that the original task put on the file;
+  // but omit the normal properties of the file
+  return objectAssign(restoredFile, extraTaskProperties);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.defaultOptions.value" id="apidoc.element.gulp-cache.defaultOptions.value">
+        function <span class="apidocSignatureSpan">gulp-cache.</span>defaultOptions.value
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">defaultOptions.value = function (file) {
+  // Convert from a File object (from vinyl) into a plain object
+  return objectPick(file, ['cwd', 'base', 'contents', 'stat', 'history', 'path']);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.toString" id="apidoc.element.gulp-cache.toString">
+        function <span class="apidocSignatureSpan">gulp-cache.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    .pipe(jshint.reporter('default'));
+});
+
+var jsHintVersion = '2.4.1',
+  jshintOptions = fs.readFileSync('.jshintrc');
+function makeHashKey(file) {
+  // Key off the file contents, jshint version and options
+  return [file.contents.<span class="apidocCodeKeywordSpan">toString</span>('utf8'), jshintVersion, jshintOptions].join
+('');
+}
+```
+
+## Clearing the cache
+
+If you find yourself needing to clear the cache, there is a handy dandy `cache.clearAll()` method:
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-cache.Cache" id="apidoc.module.gulp-cache.Cache">module gulp-cache.Cache</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.Cache.Cache" id="apidoc.element.gulp-cache.Cache.Cache">
+        function <span class="apidocSignatureSpan">gulp-cache.</span>Cache
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CacheSwap(options) {
+  this.options = assign({
+    tmpDir: tmpDir,
+    cacheDirName: 'defaultCacheSwap'
+  }, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+#### `fileCache`
+
+&gt; [Optional] Where to store the cache objects
+
+- Defaults to `new Cache({ cacheDirName: 'gulp-cache' })`
+
+- Create your own with `new cache.<span class="apidocCodeKeywordSpan">Cache</span>({ cacheDirName: 'custom-cache' })`
+
+#### `name`
+
+&gt; [Optional] The name of the bucket which stores the cached objects
+
+- Defaults to `default`
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-cache.Cache.prototype" id="apidoc.module.gulp-cache.Cache.prototype">module gulp-cache.Cache.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.Cache.prototype.addCached" id="apidoc.element.gulp-cache.Cache.prototype.addCached">
+        function <span class="apidocSignatureSpan">gulp-cache.Cache.prototype.</span>addCached
+        <span class="apidocSignatureSpan">(category, hash, contents, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addCached = function (category, hash, contents, cb) {
+  var filePath = this.getCachedFilePath(category, hash);
+
+  mkdirp(path.dirname(filePath), {mode: parseInt('0777', 8)}, function(mkdirErr) {
+    if (mkdirErr) {
+      cb(mkdirErr);
+      return;
+    }
+
+    fs.writeFile(filePath, contents, {mode: parseInt('0777', 8)}, function(writeErr) {
+      if (writeErr) {
+        cb(writeErr);
+        return;
+      }
+
+      fs.chmod(filePath, parseInt('0777', 8), function(chmodErr) {
+        if (chmodErr) {
+          cb(chmodErr);
+          return;
+        }
+
+        cb(null, filePath);
+      });
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.Cache.prototype.clear" id="apidoc.element.gulp-cache.Cache.prototype.clear">
+        function <span class="apidocSignatureSpan">gulp-cache.Cache.prototype.</span>clear
+        <span class="apidocSignatureSpan">(category, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clear = function (category, cb) {
+  var dir = path.join(this.options.tmpDir, this.options.cacheDirName, category || '');
+  rimraf(dir, {disableGlob: true}, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  cb(new PluginError('gulp-cache', err));
+});
+    }
+  });
+};
+
+cacheTask.clearAll = function(done) {
+  fileCache.<span class="apidocCodeKeywordSpan">clear</span>(null, function(err) {
+    if (err) {
+var pluginError = new PluginError(
+  'gulp-cache',
+  'Problem clearing the cache: ' + err.message
+);
+
+if (done) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.Cache.prototype.getCached" id="apidoc.element.gulp-cache.Cache.prototype.getCached">
+        function <span class="apidocSignatureSpan">gulp-cache.Cache.prototype.</span>getCached
+        <span class="apidocSignatureSpan">(category, hash, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getCached = function (category, hash, cb) {
+  var filePath = this.getCachedFilePath(category, hash);
+
+  fs.readFile(filePath, function(err, fileStream) {
+    if (err) {
+      if (err.code === 'ENOENT') {
+        cb();
+        return;
+      }
+
+      cb(err);
+      return;
+    }
+
+    cb(null, {
+      contents: fileStream.toString(),
+      path: filePath
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.Cache.prototype.getCachedFilePath" id="apidoc.element.gulp-cache.Cache.prototype.getCachedFilePath">
+        function <span class="apidocSignatureSpan">gulp-cache.Cache.prototype.</span>getCachedFilePath
+        <span class="apidocSignatureSpan">(category, hash)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getCachedFilePath = function (category, hash) {
+  return path.join(this.options.tmpDir, this.options.cacheDirName, category, hash);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.Cache.prototype.hasCached" id="apidoc.element.gulp-cache.Cache.prototype.hasCached">
+        function <span class="apidocSignatureSpan">gulp-cache.Cache.prototype.</span>hasCached
+        <span class="apidocSignatureSpan">(category, hash, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hasCached = function (category, hash, cb) {
+  var filePath = this.getCachedFilePath(category, hash);
+
+  fs.exists(filePath, function(exists) {
+    return cb(exists, exists ? filePath : null);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.Cache.prototype.removeCached" id="apidoc.element.gulp-cache.Cache.prototype.removeCached">
+        function <span class="apidocSignatureSpan">gulp-cache.Cache.prototype.</span>removeCached
+        <span class="apidocSignatureSpan">(category, hash, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeCached = function (category, hash, cb) {
+  var filePath = this.getCachedFilePath(category, hash);
+
+  fs.unlink(filePath, function(err) {
+    if (err) {
+      if (err.code === 'ENOENT') {
+        cb();
+        return;
+      }
+
+      cb(err);
+      return;
+    }
+
+    cb();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-cache.Cache.prototype.addCached" id="apidoc.module.gulp-cache.Cache.prototype.addCached">module gulp-cache.Cache.prototype.addCached</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.Cache.prototype.addCached.addCached" id="apidoc.element.gulp-cache.Cache.prototype.addCached.addCached">
+        function <span class="apidocSignatureSpan">gulp-cache.Cache.prototype.</span>addCached
+        <span class="apidocSignatureSpan">(category, hash, contents, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addCached = function (category, hash, contents, cb) {
+  var filePath = this.getCachedFilePath(category, hash);
+
+  mkdirp(path.dirname(filePath), {mode: parseInt('0777', 8)}, function(mkdirErr) {
+    if (mkdirErr) {
+      cb(mkdirErr);
+      return;
+    }
+
+    fs.writeFile(filePath, contents, {mode: parseInt('0777', 8)}, function(writeErr) {
+      if (writeErr) {
+        cb(writeErr);
+        return;
+      }
+
+      fs.chmod(filePath, parseInt('0777', 8), function(chmodErr) {
+        if (chmodErr) {
+          cb(chmodErr);
+          return;
+        }
+
+        cb(null, filePath);
+      });
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-cache.Cache.prototype.clear" id="apidoc.module.gulp-cache.Cache.prototype.clear">module gulp-cache.Cache.prototype.clear</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.Cache.prototype.clear.clear" id="apidoc.element.gulp-cache.Cache.prototype.clear.clear">
+        function <span class="apidocSignatureSpan">gulp-cache.Cache.prototype.</span>clear
+        <span class="apidocSignatureSpan">(category, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clear = function (category, cb) {
+  var dir = path.join(this.options.tmpDir, this.options.cacheDirName, category || '');
+  rimraf(dir, {disableGlob: true}, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  cb(new PluginError('gulp-cache', err));
+});
+    }
+  });
+};
+
+cacheTask.clearAll = function(done) {
+  fileCache.<span class="apidocCodeKeywordSpan">clear</span>(null, function(err) {
+    if (err) {
+var pluginError = new PluginError(
+  'gulp-cache',
+  'Problem clearing the cache: ' + err.message
+);
+
+if (done) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-cache.Cache.prototype.getCached" id="apidoc.module.gulp-cache.Cache.prototype.getCached">module gulp-cache.Cache.prototype.getCached</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.Cache.prototype.getCached.getCached" id="apidoc.element.gulp-cache.Cache.prototype.getCached.getCached">
+        function <span class="apidocSignatureSpan">gulp-cache.Cache.prototype.</span>getCached
+        <span class="apidocSignatureSpan">(category, hash, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getCached = function (category, hash, cb) {
+  var filePath = this.getCachedFilePath(category, hash);
+
+  fs.readFile(filePath, function(err, fileStream) {
+    if (err) {
+      if (err.code === 'ENOENT') {
+        cb();
+        return;
+      }
+
+      cb(err);
+      return;
+    }
+
+    cb(null, {
+      contents: fileStream.toString(),
+      path: filePath
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-cache.Cache.prototype.getCachedFilePath" id="apidoc.module.gulp-cache.Cache.prototype.getCachedFilePath">module gulp-cache.Cache.prototype.getCachedFilePath</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.Cache.prototype.getCachedFilePath.getCachedFilePath" id="apidoc.element.gulp-cache.Cache.prototype.getCachedFilePath.getCachedFilePath">
+        function <span class="apidocSignatureSpan">gulp-cache.Cache.prototype.</span>getCachedFilePath
+        <span class="apidocSignatureSpan">(category, hash)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getCachedFilePath = function (category, hash) {
+  return path.join(this.options.tmpDir, this.options.cacheDirName, category, hash);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-cache.Cache.prototype.hasCached" id="apidoc.module.gulp-cache.Cache.prototype.hasCached">module gulp-cache.Cache.prototype.hasCached</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.Cache.prototype.hasCached.hasCached" id="apidoc.element.gulp-cache.Cache.prototype.hasCached.hasCached">
+        function <span class="apidocSignatureSpan">gulp-cache.Cache.prototype.</span>hasCached
+        <span class="apidocSignatureSpan">(category, hash, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hasCached = function (category, hash, cb) {
+  var filePath = this.getCachedFilePath(category, hash);
+
+  fs.exists(filePath, function(exists) {
+    return cb(exists, exists ? filePath : null);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-cache.Cache.prototype.removeCached" id="apidoc.module.gulp-cache.Cache.prototype.removeCached">module gulp-cache.Cache.prototype.removeCached</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.Cache.prototype.removeCached.removeCached" id="apidoc.element.gulp-cache.Cache.prototype.removeCached.removeCached">
+        function <span class="apidocSignatureSpan">gulp-cache.Cache.prototype.</span>removeCached
+        <span class="apidocSignatureSpan">(category, hash, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeCached = function (category, hash, cb) {
+  var filePath = this.getCachedFilePath(category, hash);
+
+  fs.unlink(filePath, function(err) {
+    if (err) {
+      if (err.code === 'ENOENT') {
+        cb();
+        return;
+      }
+
+      cb(err);
+      return;
+    }
+
+    cb();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-cache.TaskProxy" id="apidoc.module.gulp-cache.TaskProxy">module gulp-cache.TaskProxy</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.TaskProxy.TaskProxy" id="apidoc.element.gulp-cache.TaskProxy.TaskProxy">
+        function <span class="apidocSignatureSpan">gulp-cache.</span>TaskProxy
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">TaskProxy = function (opts) {
+  objectAssign(this, {
+    task: opts.task,
+    file: opts.file,
+    opts: opts.opts,
+    originalPath: opts.file.path
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-cache.TaskProxy.prototype" id="apidoc.module.gulp-cache.TaskProxy.prototype">module gulp-cache.TaskProxy.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.TaskProxy.prototype._checkForCachedValue" id="apidoc.element.gulp-cache.TaskProxy.prototype._checkForCachedValue">
+        function <span class="apidocSignatureSpan">gulp-cache.TaskProxy.prototype.</span>_checkForCachedValue
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_checkForCachedValue = function () {
+  var self = this;
+
+  return this._getFileKey().then(function(key) {
+    // If no key returned, bug out early
+    if (!key) {
+      return {
+        key: key,
+        value: null
+      };
+    }
+
+    var getCached = Bluebird.promisify(self.opts.fileCache.getCached.bind(self.opts.fileCache));
+
+    return getCached(self.opts.name, key).then(function(cached) {
+      if (!cached) {
+        return {
+          key: key,
+          value: null
+        };
+      }
+
+      var parsedContents = tryJsonParse(cached.contents);
+      if (parsedContents === undefined) {
+        parsedContents = {cached: cached.contents};
+      }
+
+      if (self.opts.restore) {
+        parsedContents = self.opts.restore(parsedContents);
+      }
+
+      return {
+        key: key,
+        value: parsedContents
+      };
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return crypto.createHash('md5').update(key).digest('hex');
+}
+
+objectAssign(TaskProxy.prototype, {
+  processFile: function() {
+var self = this;
+
+return this.<span class="apidocCodeKeywordSpan">_checkForCachedValue</span>().then(function(cached) {
+  // If we found a cached value
+  // The path of the cache key should also be identical to the original one when the file path changed inside the task
+  if (cached.value &amp;&amp; (!cached.value.filePathChangedInsideTask || cached.value.originalPath === self.file.path)) {
+    // Extend the cached value onto the file, but don't overwrite original path info
+    var file = objectAssign(
+      self.file,
+      objectOmit(cached.value, ['cwd', 'path', 'base', 'stat', 'history'])
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.TaskProxy.prototype._getFileKey" id="apidoc.element.gulp-cache.TaskProxy.prototype._getFileKey">
+        function <span class="apidocSignatureSpan">gulp-cache.TaskProxy.prototype.</span>_getFileKey
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getFileKey = function () {
+  var getKey = this.opts.key;
+
+  if (typeof getKey === 'function' &amp;&amp; getKey.length === 2) {
+    getKey = Bluebird.promisify(getKey.bind(this.opts));
+  }
+
+  return Bluebird.resolve(getKey(this.file)).then(function(key) {
+    if (!key) {
+      return key;
+    }
+
+    return makeHash(key);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return self._runProxiedTaskAndCache(cached.key);
+  });
+},
+
+removeCachedResult: function() {
+  var self = this;
+
+  return this.<span class="apidocCodeKeywordSpan">_getFileKey</span>().then(function(cachedKey) {
+    var removeCached = Bluebird.promisify(self.opts.fileCache.removeCached, {
+      context: self.opts.fileCache
+    });
+
+    return removeCached(self.opts.name, cachedKey);
+  });
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.TaskProxy.prototype._getValueFromResult" id="apidoc.element.gulp-cache.TaskProxy.prototype._getValueFromResult">
+        function <span class="apidocSignatureSpan">gulp-cache.TaskProxy.prototype.</span>_getValueFromResult
+        <span class="apidocSignatureSpan">(result)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getValueFromResult = function (result) {
+  var getValue;
+
+  if (typeof this.opts.value !== 'function') {
+    if (typeof this.opts.value === 'string') {
+      getValue = {};
+      getValue[this.opts.value] = result[this.opts.value];
+    }
+
+    return Bluebird.resolve(getValue);
+  } else if (this.opts.value.length === 2) {
+    // Promisify if passed a node style function
+    getValue = Bluebird.promisify(this.opts.value.bind(this.opts));
+  } else {
+    getValue = this.opts.value;
+  }
+
+  return Bluebird.resolve(getValue(result));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    var self = this;
+
+    // If we didn't have a cachedKey, skip caching result
+    if (!key) {
+return Bluebird.resolve(result);
+    }
+
+    return this.<span class="apidocCodeKeywordSpan">_getValueFromResult</span>(result).then(function(value) {
+var val;
+var addCached = Bluebird.promisify(self.opts.fileCache.addCached.bind(self.opts.fileCache));
+
+if (typeof value !== 'string') {
+  if (value &amp;&amp; typeof value === 'object' &amp;&amp; Buffer.isBuffer(value.contents)) {
+    // Shallow copy so "contents" can be safely modified
+    val = objectAssign({}, value);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.TaskProxy.prototype._runProxiedTask" id="apidoc.element.gulp-cache.TaskProxy.prototype._runProxiedTask">
+        function <span class="apidocSignatureSpan">gulp-cache.TaskProxy.prototype.</span>_runProxiedTask
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_runProxiedTask = function () {
+  var self = this;
+
+  return new Bluebird(function(resolve, reject) {
+    function handleError(err) {
+      // TODO: Errors will step on each other here
+
+      // Reduce the maxListeners back down
+      self.task.setMaxListeners(self.task._maxListeners - 1);
+
+      reject(err);
+    }
+
+    function handleData(datum) {
+      // Wait for data (can be out of order, so check for matching file we wrote)
+      if (self.file !== datum) {
+        return;
+      }
+
+      // Be good citizens and remove our listeners
+      self.task.removeListener('error', handleError);
+      self.task.removeListener('data', handleData);
+
+      // Reduce the maxListeners back down
+      self.task.setMaxListeners(self.task._maxListeners - 2);
+
+      resolve(datum);
+    }
+
+    // Bump up max listeners to prevent memory leak warnings
+    var currMaxListeners = self.task._maxListeners || 0;
+    self.task.setMaxListeners(currMaxListeners + 2);
+
+    self.task.on('data', handleData);
+    self.task.once('error', handleError);
+
+    // Run through the other task and grab output (or error)
+    // Not sure if a _.defer is necessary here
+    self.task.write(self.file);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+    });
+  },
+
+  _runProxiedTaskAndCache: function(cachedKey) {
+    var self = this;
+
+    return self.<span class="apidocCodeKeywordSpan">_runProxiedTask</span>().then(function(result) {
+// If this wasn't a success, continue to next task
+// TODO: Should this also offer an async option?
+if (self.opts.success !== true &amp;&amp; !self.opts.success(result)) {
+  return result;
+}
+
+return self._storeCachedResult(cachedKey, result).then(function() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.TaskProxy.prototype._runProxiedTaskAndCache" id="apidoc.element.gulp-cache.TaskProxy.prototype._runProxiedTaskAndCache">
+        function <span class="apidocSignatureSpan">gulp-cache.TaskProxy.prototype.</span>_runProxiedTaskAndCache
+        <span class="apidocSignatureSpan">(cachedKey)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_runProxiedTaskAndCache = function (cachedKey) {
+  var self = this;
+
+  return self._runProxiedTask().then(function(result) {
+    // If this wasn't a success, continue to next task
+    // TODO: Should this also offer an async option?
+    if (self.opts.success !== true &amp;&amp; !self.opts.success(result)) {
+      return result;
+    }
+
+    return self._storeCachedResult(cachedKey, result).then(function() {
+      return result;
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    if (cached.value.path &amp;&amp; cached.value.filePathChangedInsideTask) {
+      file.path = cached.value.path;
+    }
+    return file;
+  }
+
+  // Otherwise, run the proxied task
+  return self.<span class="apidocCodeKeywordSpan">_runProxiedTaskAndCache</span>(cached.key);
+});
+  },
+
+  removeCachedResult: function() {
+var self = this;
+
+return this._getFileKey().then(function(cachedKey) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.TaskProxy.prototype._storeCachedResult" id="apidoc.element.gulp-cache.TaskProxy.prototype._storeCachedResult">
+        function <span class="apidocSignatureSpan">gulp-cache.TaskProxy.prototype.</span>_storeCachedResult
+        <span class="apidocSignatureSpan">(key, result)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_storeCachedResult = function (key, result) {
+  var self = this;
+
+  // If we didn't have a cachedKey, skip caching result
+  if (!key) {
+    return Bluebird.resolve(result);
+  }
+
+  return this._getValueFromResult(result).then(function(value) {
+    var val;
+    var addCached = Bluebird.promisify(self.opts.fileCache.addCached.bind(self.opts.fileCache));
+
+    if (typeof value !== 'string') {
+      if (value &amp;&amp; typeof value === 'object' &amp;&amp; Buffer.isBuffer(value.contents)) {
+        // Shallow copy so "contents" can be safely modified
+        val = objectAssign({}, value);
+        val.contents = val.contents.toString('utf8');
+      }
+
+      // Check if the task changed the file path
+      if (value.path !== self.originalPath) {
+        value.filePathChangedInsideTask = true;
+      }
+
+      // Keep track of the original path
+      value.originalPath = self.originalPath;
+
+      val = JSON.stringify(value, null, 2);
+    } else {
+      val = value;
+    }
+
+    return addCached(self.opts.name, key, val);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return self._runProxiedTask().then(function(result) {
+    // If this wasn't a success, continue to next task
+    // TODO: Should this also offer an async option?
+    if (self.opts.success !== true &amp;&amp; !self.opts.success(result)) {
+      return result;
+    }
+
+    return self.<span class="apidocCodeKeywordSpan">_storeCachedResult</span>(cachedKey, result).then(function() {
+      return result;
+    });
+  });
+},
+
+_runProxiedTask: function() {
+  var self = this;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.TaskProxy.prototype.processFile" id="apidoc.element.gulp-cache.TaskProxy.prototype.processFile">
+        function <span class="apidocSignatureSpan">gulp-cache.TaskProxy.prototype.</span>processFile
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">processFile = function () {
+  var self = this;
+
+  return this._checkForCachedValue().then(function(cached) {
+    // If we found a cached value
+    // The path of the cache key should also be identical to the original one when the file path changed inside the task
+    if (cached.value &amp;&amp; (!cached.value.filePathChangedInsideTask || cached.value.originalPath === self.file.path)) {
+      // Extend the cached value onto the file, but don't overwrite original path info
+      var file = objectAssign(
+        self.file,
+        objectOmit(cached.value, ['cwd', 'path', 'base', 'stat', 'history'])
+      );
+      // Restore the file path if it was set
+      if (cached.value.path &amp;&amp; cached.value.filePathChangedInsideTask) {
+        file.path = cached.value.path;
+      }
+      return file;
+    }
+
+    // Otherwise, run the proxied task
+    return self._runProxiedTaskAndCache(cached.key);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      }
+
+      new TaskProxy({
+        task: task,
+        file: file,
+        opts: opts
+      })
+      .<span class="apidocCodeKeywordSpan">processFile</span>().then(function(result) {
+        cb(null, result);
+      }, function(err) {
+        cb(new PluginError('gulp-cache', err));
+      });
+    }
+  });
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.TaskProxy.prototype.removeCachedResult" id="apidoc.element.gulp-cache.TaskProxy.prototype.removeCachedResult">
+        function <span class="apidocSignatureSpan">gulp-cache.TaskProxy.prototype.</span>removeCachedResult
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeCachedResult = function () {
+  var self = this;
+
+  return this._getFileKey().then(function(cachedKey) {
+    var removeCached = Bluebird.promisify(self.opts.fileCache.removeCached, {
+      context: self.opts.fileCache
+    });
+
+    return removeCached(self.opts.name, cachedKey);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+      var taskProxy = new TaskProxy({
+        task: null,
+        file: file,
+        opts: opts
+      });
+
+      taskProxy.<span class="apidocCodeKeywordSpan">removeCachedResult</span>().then(function() {
+        cb(null, file);
+      }).catch(function(err) {
+        cb(new PluginError('gulp-cache', err));
+      });
+    }
+  });
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-cache.clear" id="apidoc.module.gulp-cache.clear">module gulp-cache.clear</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.clear.clear" id="apidoc.element.gulp-cache.clear.clear">
+        function <span class="apidocSignatureSpan">gulp-cache.</span>clear
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clear = function (opts) {
+  opts = objectAssign({}, cacheTask.defaultOptions, opts);
+
+  return new Transform({
+    objectMode: true,
+    transform: function(file, enc, cb) {
+      if (file.isNull()) {
+        cb(null, file);
+        return;
+      }
+
+      if (file.isStream()) {
+        cb(new PluginError('gulp-cache', 'Cannot operate on stream sources'));
+        return;
+      }
+
+      var taskProxy = new TaskProxy({
+        task: null,
+        file: file,
+        opts: opts
+      });
+
+      taskProxy.removeCachedResult().then(function() {
+        cb(null, file);
+      }).catch(function(err) {
+        cb(new PluginError('gulp-cache', err));
+      });
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  cb(new PluginError('gulp-cache', err));
+});
+    }
+  });
+};
+
+cacheTask.clearAll = function(done) {
+  fileCache.<span class="apidocCodeKeywordSpan">clear</span>(null, function(err) {
+    if (err) {
+var pluginError = new PluginError(
+  'gulp-cache',
+  'Problem clearing the cache: ' + err.message
+);
+
+if (done) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-cache.clearAll" id="apidoc.module.gulp-cache.clearAll">module gulp-cache.clearAll</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.clearAll.clearAll" id="apidoc.element.gulp-cache.clearAll.clearAll">
+        function <span class="apidocSignatureSpan">gulp-cache.</span>clearAll
+        <span class="apidocSignatureSpan">(done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clearAll = function (done) {
+  fileCache.clear(null, function(err) {
+    if (err) {
+      var pluginError = new PluginError(
+        'gulp-cache',
+        'Problem clearing the cache: ' + err.message
+      );
+
+      if (done) {
+        done(pluginError);
+        return;
+      }
+
+      throw pluginError;
+    }
+
+    if (done) {
+      done();
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // Key off the file contents, jshint version and options
+  return [file.contents.toString('utf8'), jshintVersion, jshintOptions].join('');
+}
+```
+
+## Clearing the cache
+
+If you find yourself needing to clear the cache, there is a handy dandy `cache.<span class="apidocCodeKeywordSpan">clearAll</span>()` method:
+
+```js
+var cache = require('gulp-cache');
+
+gulp.task('clear', function (done) {
+  return cache.clearAll(done);
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-cache.defaultOptions" id="apidoc.module.gulp-cache.defaultOptions">module gulp-cache.defaultOptions</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.defaultOptions.key" id="apidoc.element.gulp-cache.defaultOptions.key">
+        function <span class="apidocSignatureSpan">gulp-cache.defaultOptions.</span>key
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function defaultKey(file) {
+  return [VERSION, file.contents.toString('base64')].join('');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.defaultOptions.restore" id="apidoc.element.gulp-cache.defaultOptions.restore">
+        function <span class="apidocSignatureSpan">gulp-cache.defaultOptions.</span>restore
+        <span class="apidocSignatureSpan">(restored)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">restore = function (restored) {
+  if (restored.contents) {
+    // Handle node 0.11 buffer to JSON as object with { type: 'buffer', data: [...] }
+    if (restored &amp;&amp; restored.contents &amp;&amp; Array.isArray(restored.contents.data)) {
+      restored.contents = new Buffer(restored.contents.data);
+    } else if (Array.isArray(restored.contents)) {
+      restored.contents = new Buffer(restored.contents);
+    } else if (typeof restored.contents === 'string') {
+      restored.contents = new Buffer(restored.contents, 'base64');
+    }
+  }
+
+  var restoredFile = new File(restored);
+  var extraTaskProperties = objectOmit(restored, Object.keys(restoredFile));
+
+  // Restore any properties that the original task put on the file;
+  // but omit the normal properties of the file
+  return objectAssign(restoredFile, extraTaskProperties);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  var parsedContents = tryJsonParse(cached.contents);
+  if (parsedContents === undefined) {
+    parsedContents = {cached: cached.contents};
+  }
+
+  if (self.opts.restore) {
+    parsedContents = self.opts.<span class="apidocCodeKeywordSpan">restore</span>(parsedContents);
+  }
+
+  return {
+    key: key,
+    value: parsedContents
+  };
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.defaultOptions.value" id="apidoc.element.gulp-cache.defaultOptions.value">
+        function <span class="apidocSignatureSpan">gulp-cache.defaultOptions.</span>value
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">value = function (file) {
+  // Convert from a File object (from vinyl) into a plain object
+  return objectPick(file, ['cwd', 'base', 'contents', 'stat', 'history', 'path']);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-cache.defaultOptions.key" id="apidoc.module.gulp-cache.defaultOptions.key">module gulp-cache.defaultOptions.key</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.defaultOptions.key.key" id="apidoc.element.gulp-cache.defaultOptions.key.key">
+        function <span class="apidocSignatureSpan">gulp-cache.defaultOptions.</span>key
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function defaultKey(file) {
+  return [VERSION, file.contents.toString('base64')].join('');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-cache.defaultOptions.restore" id="apidoc.module.gulp-cache.defaultOptions.restore">module gulp-cache.defaultOptions.restore</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.defaultOptions.restore.restore" id="apidoc.element.gulp-cache.defaultOptions.restore.restore">
+        function <span class="apidocSignatureSpan">gulp-cache.defaultOptions.</span>restore
+        <span class="apidocSignatureSpan">(restored)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">restore = function (restored) {
+  if (restored.contents) {
+    // Handle node 0.11 buffer to JSON as object with { type: 'buffer', data: [...] }
+    if (restored &amp;&amp; restored.contents &amp;&amp; Array.isArray(restored.contents.data)) {
+      restored.contents = new Buffer(restored.contents.data);
+    } else if (Array.isArray(restored.contents)) {
+      restored.contents = new Buffer(restored.contents);
+    } else if (typeof restored.contents === 'string') {
+      restored.contents = new Buffer(restored.contents, 'base64');
+    }
+  }
+
+  var restoredFile = new File(restored);
+  var extraTaskProperties = objectOmit(restored, Object.keys(restoredFile));
+
+  // Restore any properties that the original task put on the file;
+  // but omit the normal properties of the file
+  return objectAssign(restoredFile, extraTaskProperties);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  var parsedContents = tryJsonParse(cached.contents);
+  if (parsedContents === undefined) {
+    parsedContents = {cached: cached.contents};
+  }
+
+  if (self.opts.restore) {
+    parsedContents = self.opts.<span class="apidocCodeKeywordSpan">restore</span>(parsedContents);
+  }
+
+  return {
+    key: key,
+    value: parsedContents
+  };
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-cache.defaultOptions.value" id="apidoc.module.gulp-cache.defaultOptions.value">module gulp-cache.defaultOptions.value</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.defaultOptions.value.value" id="apidoc.element.gulp-cache.defaultOptions.value.value">
+        function <span class="apidocSignatureSpan">gulp-cache.defaultOptions.</span>value
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">value = function (file) {
+  // Convert from a File object (from vinyl) into a plain object
+  return objectPick(file, ['cwd', 'base', 'contents', 'stat', 'history', 'path']);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-cache.toString" id="apidoc.module.gulp-cache.toString">module gulp-cache.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-cache.toString.toString" id="apidoc.element.gulp-cache.toString.toString">
+        function <span class="apidocSignatureSpan">gulp-cache.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    .pipe(jshint.reporter('default'));
+});
+
+var jsHintVersion = '2.4.1',
+  jshintOptions = fs.readFileSync('.jshintrc');
+function makeHashKey(file) {
+  // Key off the file contents, jshint version and options
+  return [file.contents.<span class="apidocCodeKeywordSpan">toString</span>('utf8'), jshintVersion, jshintOptions].join
+('');
+}
+```
+
+## Clearing the cache
+
+If you find yourself needing to clear the cache, there is a handy dandy `cache.clearAll()` method:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
